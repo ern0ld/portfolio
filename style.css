@@ -1,0 +1,392 @@
+:root {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 600ms;
+  }
+  
+  
+  body {
+    color: black;
+    background-color: whitesmoke;
+    margin: 0;
+ 
+  }
+  #profilepicdiv{
+
+    width: 250px;
+    height: 250px;
+    background-image: url("profiili.jpg");
+    border-radius: 50%;
+    background-size: cover;
+    position: static;
+    margin-left: auto;
+    margin-right: auto;
+ 
+   
+  }
+  #hobbypicdiv{
+  width: 250px;
+  height: 250px;
+  background-image: url("sinivyo.png");
+  border-radius: 50%;
+  background-size: cover;
+  position: static;
+  margin-left: auto;
+  margin-right: auto;
+ 
+}
+  #introductiondiv{
+    position: static;
+	top: 300px;
+	text-align: center;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+
+  }
+  .headerdiv{
+    position: static;
+	top: 300px;
+	text-align: center;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+
+  }
+
+  h1{
+    font-size: 2rem;
+    font-weight: 600;
+    transition: all 0.4s;
+}
+  .big{
+    font-size: 5rem;
+    font-weight: 900;
+}
+
+ #navcontainer{
+     z-index: 0;
+ }
+  .material-icons.md-36 { font-size: 36px; }
+  /*pages switches display-status of active divs*/
+  .page{
+    display: none;
+    width: 100%;
+    min-height: 100%; 
+    padding: 1rem 2rem;
+}
+.active{
+    display: block; 
+}
+
+/*gallery definitions*/
+#gallerydiv{
+    position: static;
+    left:0;
+    right:0;
+}
+
+div.photo {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+  }
+  
+  div.photo:hover {
+    border: 1px solid #777;
+  }
+  
+  div.photo img {
+    width: 100%;
+    height: auto;
+  }
+  
+  #description {
+    padding: 15px;
+    text-align: center;
+  }
+  .darkstyle{
+    color :"#b6b6b6";
+    position:"absolute";
+    z-index: 1;
+}
+
+
+  /**/
+  
+  main {
+    margin-left: 5rem;
+    padding: 1rem;
+  }
+  /*navigation bar definitions*/
+  .navbar {
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 600ms ease;
+    overflow: scroll;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .nav-item {
+    width: 100%;
+  }
+  .nav-item:nth-last-child(2){
+    margin-top: auto;
+  }
+  .nav-item:last-child {
+    margin-top: auto;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.6);
+    transition: var(--transition-speed);
+  }
+  
+  .nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+  }
+  
+  .link-text {
+    display: none;
+    margin-left: 1rem;
+  }
+  
+  .nav-link svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+  }
+  .nav-link i {
+    width: 2rem;
+    color: #ff7eee;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+  }
+  
+  .fa-primary {
+    color: #ff7eee;
+  }
+  
+  .fa-secondary {
+    color: #df49a6;
+  }
+  
+  .fa-primary,
+  .fa-secondary {
+    transition: var(--transition-speed);
+  }
+  
+  .logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+  }
+  
+  .logo svg {
+    transform: rotate(0deg);
+    transition: var(--transition-speed);
+  }
+  
+  .logo-text
+  {
+    display: inline;
+    position: absolute;
+    left: -999px;
+    transition: var(--transition-speed);
+  }
+  
+  .navbar:hover .logo svg {
+    transform: rotate(-180deg);
+  }
+  
+  /* Settings only for small screens. Width smaller than 600px */
+  @media only screen and (max-width: 600px) {
+    .navbar {
+      bottom: 0;
+      width: 100%;
+      height: 5rem;
+    }
+    #hobbydiv{
+      position: static;
+    top: 300px;
+    text-align: center;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    div.photo {
+      margin: 5px;
+      border: 1px solid #ccc;
+      float: left;
+      width: 150px;
+    }
+    div.photo:hover {
+      border: 1px solid #777;
+    }
+    
+    div.photo img {
+      width: 100%;
+      height: auto;
+    }
+    
+    #description {
+      padding: 7px;
+      text-align: center;
+    }
+  
+    .logo {
+        display: none;
+      }
+  
+    .navbar-nav {
+      flex-direction: row;
+    }
+  
+    .nav-link {
+      justify-content: center;
+    }
+    #referencediv{
+      margin-left: 5px;
+margin-bottom: 1100px;
+      
+    }
+   
+    main {
+      margin: 0;
+     
+    } 
+  
+  }
+  
+  /* Settings for large screens, width larger than 600px */
+  @media only screen and (min-width: 600px) {
+    .navbar {
+      top: 0;
+    
+      width: 5rem;
+      height: 100vh;
+    }
+    #gallerydiv{
+      position: static;
+      text-align: center;
+      left: 0;
+      right: 0;
+      margin-left: 25%;
+      margin-right: auto;
+     
+  
+    }
+    #hobbydiv{
+      position: static;
+    top: 300px;
+    text-align: center;
+        left: 0;
+        right: 0;
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+  
+    .navbar:hover {
+      width: 20rem;
+    }
+  
+    .navbar:hover .link-text {
+      display: inline;
+    }
+  
+    .navbar:hover .logo svg
+    {
+      margin-left: 15rem;
+    }
+  
+    .navbar:hover .logo-text
+    {
+      left: 0px;
+    }
+    #referencediv{
+      margin-left: 300px;
+margin-bottom: 800px;
+      
+    }
+   /*Custom scrollbar*/
+    body::-webkit-scrollbar {
+      width: 0.25rem;
+    }
+    
+    body::-webkit-scrollbar-track {
+      background: #1e1e24;
+    }
+    
+    body::-webkit-scrollbar-thumb {
+      background: #6649b8;
+    }
+  }
+
+  /*Theme definitions*/
+  .dark {
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+
+  }
+  
+  .light {
+    --text-primary: #1f1f1f;
+    --text-secondary: #000000;
+    --bg-primary: #ffffff;
+    --bg-secondary: #e4e4e4;
+  }
+  
+  .solar {
+    --text-primary: #576e75;
+    --text-secondary: #35535c;
+    --bg-primary: #fdf6e3;
+    --bg-secondary: #f5e5b8;
+  }
+  
+  .theme-icon {
+    display: none;
+  }
+  
+  .dark #darkIcon {
+    display: block;
+  }
+  
+  .light #lightIcon {
+    display: block;
+  }
+  
+  .solar #solarIcon {
+    display: block;
+  }  
