@@ -260,6 +260,11 @@ div.photo {
       min-width: 1rem;
       margin: 0 1.5rem;
     }
+    h2{
+      font-size: 1.3rem;
+      font-weight: 600;
+    
+  }
   
     
     .material-icons.md-36 { font-size:24px; }
