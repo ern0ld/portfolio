@@ -219,6 +219,16 @@
             </a>
           </li>
 
+          <li class="nav-item" data-target="contact">
+            
+            <a href="#" class="nav-link" data-target="contact">
+           
+                <i class="material-icons md-36" data-target="contact">chat</i>
+            
+              <span class="link-text" data-target="contact">Contact me</span>
+            </a>
+          </li>
+
           <li class="nav-item" onclick="changeLanguage()">
             
             <a href="en/index.html" class="nav-link" onclick="changeLanguage()" >
@@ -323,7 +333,7 @@
      </div>
 
      <div class="page" id="reference" >
-        <div  class="headerdiv" style="text-align: center; margin-right: 20%;" ><h1 class="contenttext">References</h1></div>
+        <div  class="headerdiv" style="text-align: center;"><h1 class="contenttext">References</h1></div>
         <div class="contenttext" id="referencediv" >
             <div id="experiencediv" style="width:30%; height:50%; float:left;">
             <h2>WORK EXPERIENCE</h2>
@@ -397,6 +407,47 @@
             <div class="contenttext" id="description">My beloved hobby</div>
           </div>
         </div>
+    </div>
+
+    <div class="page" id="contact">
+        <div class="headerdiv" class="contenttext" ><h1 class="contenttext">Contact me</h1></div>
+    
+      </br>
+          <div id="contactdiv" class="contenttext">
+            <form method="POST" onsubmit="return validateContactForm()" action="https://formspree.io/mlelngda" >
+              <div class="input-row">
+                <label style="padding-top: 20px;" class="contenttext">Name</label> <span
+                    id="userName-info" class="info"></span><br /> <input
+                    type="text" class="input-field" name="userName"
+                    id="userName" />
+            </div>
+            <div class="input-row" >
+                <label class="contenttext">Email</label> <span id="userEmail-info"
+                    class="info"></span><br /> <input type="text"
+                    class="input-field" name="userEmail" id="userEmail" />
+            </div>
+            <!--<div class="input-row">
+                <label>Aihe</label> <span id="subject-info"
+                    class="info"></span><br /> <input type="text"
+                    class="input-field" name="subject" id="subject" />
+            </div>-->
+            <div class="input-row">
+                <label class="contenttext">Message</label> <span id="userMessage-info"
+                    class="info"></span><br />
+                <textarea name="content" id="content"
+                    class="input-field" cols="60" rows="6"></textarea>
+            </div>
+            <div>
+                <input type="submit" name="send" class="btn-submit"
+                    value="Send" />
+    
+            </div>
+    </form>
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"
+        type="text/javascript"></script>
+    <script type="text/javascript" src="mail.js"></script>
+    </div>
     </div>
     <script src="..\app.js"></script>
     </main>
