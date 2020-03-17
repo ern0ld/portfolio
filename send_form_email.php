@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['email'])) {
+if(isset([HttpPost]['email'])) {
      
     // CHANGE THE TWO LINES BELOW
     $email_to = "eksuvi@utu.fi";
