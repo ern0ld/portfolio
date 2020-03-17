@@ -227,6 +227,10 @@ div.photo {
       height: 5rem;
       overflow: hidden;
     }
+    .big{
+      font-size: 3rem;
+      font-weight: 700;
+  }
     .nav-link i {
       width: 1rem;
       color: #ff7eee;
