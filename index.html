@@ -10,6 +10,11 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/7abc9517de.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"
+    type="text/javascript"></script>
+<script type="text/javascript" src="mail.js"></script>
+<script src="window.js"></script>
+<script src="en/enwindow.js"></script>
   </head>
   
   <body>
@@ -196,21 +201,22 @@
 </div>
 <!--Idea is to switch visibility of divs based on their class, if div belongs only to page-class it's display is none, if div belongs in the active-class, it's display is block-->
     <main>
-     <div class="page active" id="home">
-       <div class="headerdiv" class="contenttext" ><h1 class="contenttext">Erkki Suvila</h1></div>
+     <div class="page active theme default" id="home">
+       <div class="headerdiv" class="contenttext" ><h1>Erkki Suvila</h1></div>
         <div id="profilepicdiv"></div>    </br>
-        <div id="introductiondiv" class="contenttext">
+        <div id="introductiondiv">
             Olen 32-vuotias informaatioteknologiasta ja elektroniikasta kiinnostunut mies. Pidän ongelmanratkaisusta ja asioiden korjaamisesta.</br>
                 Mikäli en heti keksi, miten jokin asia hoidetaan, otan selvää.
                </div> 
+              
         
 
      </div>
 
-
-     <div class="page" id="reference">
-      <div  class="headerdiv" style="text-align: center;" ><h1 class="contenttext">Referenssit</h1></div>
-      <div class="contenttext" id="referencediv" >
+ 
+     <div class="page theme" id="reference">
+      <div  class="headerdiv" style="text-align: center;" ><h1 id="rhead" >Referenssit</h1></div>
+      <div id="referencediv" >
           <div id="experiencediv" style="width:30%; height:50%; float:left;">
             <h2>TYÖKOKEMUS</h2>
            <h4> Turun Tietokeskus Oy</h4>	ICT-asentaja			02/2018-06/2018
@@ -238,7 +244,7 @@
 
 
     </div>
-    <div class="page" id="hobbies">
+    <div class="page theme" id="hobbies">
       <div class="headerdiv" class="contenttext" ><h1 class="contenttext">Harrastukset</h1></div>
         <div id="hobbypicdiv"></div>
     </br>
@@ -246,7 +252,7 @@
             </div>
     </div>
 
-    <div class="page" id="gallery">
+    <div class="page theme" id="gallery">
       <div  class="headerdiv" class="contenttext"><h1 class="contenttext">Kuvia</h1></div>
         <div id="gallerydiv">
         <div class="photo">
@@ -280,12 +286,12 @@
     </div>
 
   </div>
-  <div class="page" id="contact">
+  <div class="page theme" id="contact">
     <div class="headerdiv" class="contenttext" ><h1 class="contenttext">Ota yhteyttä</h1></div>
 
   </br>
       <div id="contactdiv" class="contenttext">
-        <form method="POST" style="margin-right: auto; margin-left:auto" onsubmit="return validateContactForm()" action="https://formspree.io/mlelngda" >
+        <form method="POST" id="contactform" style="margin-right: auto; margin-left:auto" onsubmit="return validateContactForm()" action="https://formspree.io/mlelngda" >
           <div class="input-row">
             <label style="padding-top: 20px;" class="contenttext">Nimi</label> <span
                 id="userName-info" class="info"></span><br /> <input
@@ -315,9 +321,7 @@
         </div>
 </form>
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"
-    type="text/javascript"></script>
-<script type="text/javascript" src="mail.js"></script>
+
 </div>
 
           
@@ -325,5 +329,6 @@
         
  <script src="mail.js"></script>
     <script src="app.js"></script>
+
     </main>
   </body>

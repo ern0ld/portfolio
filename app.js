@@ -42,7 +42,12 @@ const app = {
         //poistetaan luokkalistasta edellinen aktiivinen sivu
         //This is were the former visible div is removed from classlist
         if( document.querySelector('.active').classList !== null){
-        document.querySelector('.active').classList.remove('active');
+            var toRemove = document.querySelector('.active')
+            console.log(toRemove)
+        toRemove.classList.remove('active');
+        if(localStorage.getItem(toRemove) !== null){
+            localStorage.removeItem(toRemove)
+        } 
         }
         else{
             console.log("tyhjää")
@@ -61,17 +66,23 @@ const app = {
            document.getElementById(page).classList.add('active');
 
        }
-       if(currentPage !== null){
+     
         //Lisätään historiaan uusi sivu
         //Add new page/div to history
-        history.pushState({}, currentPage, `#${currentPage}`);
+        history.pushState({}, page, `#${page}`);
         document.getElementById(page).dispatchEvent(app.show);
+       
+        
+        localStorage.setItem("Current", page)
+       
        }
      
-    },
+    ,
     pageShown: function(ev){
-      
+     
+
         console.log(ev.target);
+
         console.log('Page', ev.target.id, 'just shown');
         currentPage = ev.target.id ;
         console.log(currentPage);
@@ -109,19 +120,22 @@ const app = {
 document.addEventListener('DOMContentLoaded', app.init);
 document.addEventListener('DOMContentLoaded', animate);
 
+
 //language change, changes the window location for now
 function changeLanguage(){
     
     if(document.getElementById("languagespan").innerHTML === "EN"){
-    window.location.href = "en/index.html"
+     
+            window.location.href = "en/index.html"
+         
     }
     else{
         window.location.href = "../index.html"
-    }
+    }  
 }
 
 function animate(){
-      
+
 
     var h1 = document.querySelector('h1');
     h1.classList.add('big')
@@ -129,3 +143,4 @@ function animate(){
         h.classList.remove('big');
     }, 1200, h1);
 }
+
