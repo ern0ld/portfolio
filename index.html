@@ -88,7 +88,18 @@
               <span class="link-text" data-target="gallery">Kuvia</span>
             </a>
           </li>
-          <!--Kielen vaihto, vaihdetaan toistaiseksi koko sivu-->
+
+
+          <li class="nav-item" data-target="contact">
+            
+            <a href="#" class="nav-link" data-target="contact">
+           
+                <i class="material-icons md-36" data-target="contact">chat</i>
+            
+              <span class="link-text" data-target="contact">Ota yhteyttä</span>
+            </a>
+          </li>
+          <!--Change language, for now change the whole page-->
           <li class="nav-item" onclick="changeLanguage()">
             
             <a href="en/index.html" class="nav-link" onclick="changeLanguage()" >
@@ -98,6 +109,8 @@
               <span class="link-text"onclick="changeLanguage()" id="languagespan">EN</span>
             </a>
           </li>
+
+         
   <!--Switch theme-->
         <li class="nav-item" id="themeButton">
           <a href="#" class="nav-link">
@@ -266,6 +279,116 @@
           </div>
         </div>
     </div>
+
+  </div>
+  <div class="page" id="contact">
+    <div class="headerdiv" class="contenttext" ><h1 class="contenttext">Ota yhteyttä</h1></div>
+
+  </br>
+      <div id="contactdiv" class="contenttext">
+        <form name="htmlform" method="post" action="send_form_email.php">
+          <table width="450px">
+          </tr>
+          <tr>
+           <td valign="top">
+            <label for="first_name">Etunimi *</label>
+           </td>
+           <td valign="top">
+            <input  type="text" name="first_name" maxlength="50" size="30">
+           </td>
+          </tr>
+           
+          <tr>
+           <td valign="top">
+            <label for="last_name">Sukunimi *</label>
+           </td>
+           <td valign="top">
+            <input  type="text" name="last_name" maxlength="50" size="30">
+           </td>
+          </tr>
+          <tr>
+           <td valign="top">
+            <label for="email">Sähköposti *</label>
+           </td>
+           <td valign="top">
+            <input  type="text" name="email" maxlength="80" size="30">
+           </td>
+           
+          </tr>
+          <tr>
+           <td valign="top">
+            <label for="telephone">Puhelin</label>
+           </td>
+           <td valign="top">
+            <input  type="text" name="telephone" maxlength="30" size="30">
+           </td>
+          </tr>
+          <tr>
+           <td valign="top">
+            <label for="comments">Viesti *</label>
+           </td>
+           <td valign="top">
+            <textarea  name="comments" maxlength="1000" cols="25" rows="6"></textarea>
+           </td>
+           
+          </tr>
+          <tr>
+           <td colspan="2" style="text-align:center">
+            <input type="submit" value="Submit"> 
+           </td>
+          </tr>
+          </table>
+          </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"
+    type="text/javascript"></script>
+<script type="text/javascript">
+    function validateContactForm() {
+        var valid = true;
+
+        $(".info").html("");
+        $(".input-field").css('border', '#e0dfdf 1px solid');
+        var userName = $("#userName").val();
+        var userEmail = $("#userEmail").val();
+        var subject = $("#subject").val();
+        var content = $("#content").val();
+        
+        if (userName == "") {
+            $("#userName-info").html("Required.");
+            $("#userName").css('border', '#e66262 1px solid');
+            valid = false;
+        }
+        if (userEmail == "") {
+            $("#userEmail-info").html("Required.");
+            $("#userEmail").css('border', '#e66262 1px solid');
+            valid = false;
+        }
+        if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
+        {
+            $("#userEmail-info").html("Invalid Email Address.");
+            $("#userEmail").css('border', '#e66262 1px solid');
+            valid = false;
+        }
+
+        if (subject == "") {
+            $("#subject-info").html("Required.");
+            $("#subject").css('border', '#e66262 1px solid');
+            valid = false;
+        }
+        if (content == "") {
+            $("#userMessage-info").html("Required.");
+            $("#content").css('border', '#e66262 1px solid');
+            valid = false;
+        }
+        return valid;
+    }
+</script>
+          
+          </div>
+        
+  </div>
+ <script src="mail.js"></script>
     <script src="app.js"></script>
     </main>
   </body>
