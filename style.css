@@ -266,8 +266,9 @@ div.photo {
     
   }
   #gallerydiv{
-padding:20px;
-margin-bottom: 100px;
+padding-left:20px;
+margin-bottom: 400px;
+
   }
     
     .material-icons.md-36 { font-size:24px; }
