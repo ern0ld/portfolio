@@ -8,7 +8,7 @@ if(isset([HttpPost]['email'])) {
      
      
     function died($error) {
-        // your error code can go here
+        // handling errors
         echo "We are very sorry, but there were error(s) found with the form you submitted. ";
         echo "These errors appear below.<br /><br />";
         echo $error."<br /><br />";

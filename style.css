@@ -84,6 +84,7 @@
  }
   .material-icons.md-36 { font-size: 36px; }
   /*pages switches display-status of active divs*/
+  
   .page{
     display: none;
     
@@ -91,6 +92,14 @@
 .active{
     display: block; 
     
+}
+.secondary{
+  display: none;
+  
+}
+.primary{
+  display: block; 
+  
 }
 
 /*gallery definitions*/

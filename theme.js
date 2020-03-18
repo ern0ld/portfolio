@@ -24,13 +24,20 @@ const themeMap = {
 
   //Toggle between themes
   function toggleTheme() {
+    if(document.querySelector(".primary").id.includes("en") && !document.querySelector(".active").id.includes("2")){
+     // document.querySelector(".active").classList.remove('active')
+
+      document.getElementById(activeEn()).classList.add("active")
+    }
  localStorage.setItem("themeChanged", true)
-    const current = localStorage.getItem('theme');
+ const current = localStorage.getItem('theme');
+ const next = themeMap[current];
     document.querySelectorAll(".theme").forEach((e)=>{ if(e.classList.contains(current+"k")){
        e.classList.remove(current+"k");}
     })
-    const next = themeMap[current];
+    
     document.querySelectorAll(".theme").forEach((e)=> e.classList.add(next+"k"))
+    
     bodyClass.replace(current, next);
     localStorage.setItem('theme', next)
     console.log(next)
@@ -58,6 +65,8 @@ if( next === "light")
 }
 
   var test = document.getElementById('themeButton')
+ test.addEventListener("click", toggleTheme)
+ var test = document.getElementById('themeButton2')
  test.addEventListener("click", toggleTheme)
 
  

@@ -16,6 +16,7 @@
   </head>
   
   <body>
+    <div class="primary" id="fidiv">
     <!--Navingointipalkki ja sen sisältö-->
   <div id="navcontainer">
     <nav class="navbar" id="navbarid">
@@ -102,13 +103,13 @@
             </a>
           </li>
           <!--Change language, for now change the whole page-->
-          <li class="nav-item" onclick="changeLanguage()">
+          <li class="nav-item" data-target="lang" onclick="changeLanguageEN()">
             
-            <a href="en/index.html" class="nav-link" onclick="changeLanguage()" >
+            <a href="en/index.html" class="nav-link" data-target="lang" onclick="changeLanguageEN()" >
            
-              <i class="material-icons md-36">public</i>
+              <i class="material-icons md-36"  data-target="lang">public</i>
             
-              <span class="link-text"onclick="changeLanguage()" id="languagespan">EN</span>
+              <span class="link-text" data-target="lang" onclick="changeLanguageEN()" id="languagespan">EN</span>
             </a>
           </li>
 
@@ -329,11 +330,325 @@
 
           
           </div>
+
+
+  </div>
+<div class="secondary" id="endiv">
+  <div id="navcontainer">
+    <nav class="navbar" id="navbarid">
+      <ul class="navbar-nav" >
+        <li class="logo">
+          <a href="#" class="nav-link">
+            <span class="link-text logo-text" data-target="home" >Erkki Suvila</span>
+            <svg
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fad"
+              data-icon="angle-double-right"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
+            >
+              <g class="fa-group">
+                <path
+                  fill="currentColor"
+                  d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
+                  class="fa-secondary"
+                ></path>
+                <path
+                  fill="currentColor"
+                  d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
+                  class="fa-primary"
+                ></path>
+              </g>
+            </svg>
+          </a>
+        </li>
+  
+          <li class="nav-item" data-target="home2">
+            
+            <a href="#" class="nav-link" data-target="home2">
+           
+                <i class="material-icons md-36" data-target="home2">face</i>
+            
+              <span class="link-text"  data-target="home2">About me</span>
+            </a>
+          </li>
+          
+
+        <li class="nav-item" data-target="reference2">
+            
+            <a href="#" class="nav-link" data-target="reference2">
+           
+                <i class="material-icons md-36" data-target="reference2">update</i>
+            
+              <span class="link-text" data-target="reference2">References</span>
+            </a>
+          </li>
+  
+    
+        <li class="nav-item" data-target="hobbies2">
+            
+            <a href="#" class="nav-link" data-target="hobbies2">
+           
+                <i class="material-icons md-36" data-target="hobbies2">power</i>
+            
+              <span class="link-text" data-target="hobbies2">Hobbies</span>
+            </a>
+          </li>
+  
+        <li class="nav-item" data-target="gallery2">
+            
+            <a href="#" class="nav-link" data-target="gallery2">
+           
+                <i class="material-icons md-36" data-target="gallery2">photo_library</i>
+            
+              <span class="link-text" data-target="gallery2">Pictures</span>
+            </a>
+          </li>
+
+          <li class="nav-item" data-target="contact2">
+            
+            <a href="#" class="nav-link" data-target="contact2">
+           
+                <i class="material-icons md-36" data-target="contact2">chat</i>
+            
+              <span class="link-text" data-target="contact2">Contact me</span>
+            </a>
+          </li>
+
+          <li class="nav-item" data-target="lang" onclick="changeLanguageFI()">
+            
+            <a href="en/index.html" data-target="lang"  class="nav-link" onclick="changeLanguageFI()" >
+           
+              <i class="material-icons md-36" data-target="lang"  >public</i>
+            
+              <span class="link-text" data-target="lang" onclick="changeLanguageFI()" id="languagespan">FI</span>
+            </a>
+  
+        <li class="nav-item" id="themeButton2">
+          <a href="#" class="nav-link">
+            <svg
+              class="theme-icon"
+              id="lightIcon"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fad"
+              data-icon="moon-stars"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="svg-inline--fa fa-moon-stars fa-w-16 fa-7x"
+            >
+              <g class="fa-group">
+                <path
+                  fill="currentColor"
+                  d="M320 32L304 0l-16 32-32 16 32 16 16 32 16-32 32-16zm138.7 149.3L432 128l-26.7 53.3L352 208l53.3 26.7L432 288l26.7-53.3L512 208z"
+                  class="fa-secondary"
+                ></path>
+                <path
+                  fill="currentColor"
+                  d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z"
+                  class="fa-primary"
+                ></path>
+              </g>
+            </svg>
+            <svg
+              class="theme-icon"
+              id="solarIcon"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fad"
+              data-icon="sun"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              class="svg-inline--fa fa-sun fa-w-16 fa-7x"
+            >
+              <g class="fa-group">
+                <path
+                  fill="currentColor"
+                  d="M502.42 240.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.41-94.8a17.31 17.31 0 0 0-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4a17.31 17.31 0 0 0 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.41-33.5 47.3 94.7a17.31 17.31 0 0 0 31 0l47.31-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3a17.33 17.33 0 0 0 .2-31.1zm-155.9 106c-49.91 49.9-131.11 49.9-181 0a128.13 128.13 0 0 1 0-181c49.9-49.9 131.1-49.9 181 0a128.13 128.13 0 0 1 0 181z"
+                  class="fa-secondary"
+                ></path>
+                <path
+                  fill="currentColor"
+                  d="M352 256a96 96 0 1 1-96-96 96.15 96.15 0 0 1 96 96z"
+                  class="fa-primary"
+                ></path>
+              </g>
+            </svg>
+            <svg
+              class="theme-icon"
+              id="darkIcon"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fad"
+              data-icon="sunglasses"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+              class="svg-inline--fa fa-sunglasses fa-w-18 fa-7x"
+            >
+              <g class="fa-group">
+                <path
+                  fill="currentColor"
+                  d="M574.09 280.38L528.75 98.66a87.94 87.94 0 0 0-113.19-62.14l-15.25 5.08a16 16 0 0 0-10.12 20.25L395.25 77a16 16 0 0 0 20.22 10.13l13.19-4.39c10.87-3.63 23-3.57 33.15 1.73a39.59 39.59 0 0 1 20.38 25.81l38.47 153.83a276.7 276.7 0 0 0-81.22-12.47c-34.75 0-74 7-114.85 26.75h-73.18c-40.85-19.75-80.07-26.75-114.85-26.75a276.75 276.75 0 0 0-81.22 12.45l38.47-153.8a39.61 39.61 0 0 1 20.38-25.82c10.15-5.29 22.28-5.34 33.15-1.73l13.16 4.39A16 16 0 0 0 180.75 77l5.06-15.19a16 16 0 0 0-10.12-20.21l-15.25-5.08A87.95 87.95 0 0 0 47.25 98.65L1.91 280.38A75.35 75.35 0 0 0 0 295.86v70.25C0 429 51.59 480 115.19 480h37.12c60.28 0 110.38-45.94 114.88-105.37l2.93-38.63h35.76l2.93 38.63c4.5 59.43 54.6 105.37 114.88 105.37h37.12C524.41 480 576 429 576 366.13v-70.25a62.67 62.67 0 0 0-1.91-15.5zM203.38 369.8c-2 25.9-24.41 46.2-51.07 46.2h-37.12C87 416 64 393.63 64 366.11v-37.55a217.35 217.35 0 0 1 72.59-12.9 196.51 196.51 0 0 1 69.91 12.9zM512 366.13c0 27.5-23 49.87-51.19 49.87h-37.12c-26.69 0-49.1-20.3-51.07-46.2l-3.12-41.24a196.55 196.55 0 0 1 69.94-12.9A217.41 217.41 0 0 1 512 328.58z"
+                  class="fa-secondary"
+                ></path>
+                <path
+                  fill="currentColor"
+                  d="M64.19 367.9c0-.61-.19-1.18-.19-1.8 0 27.53 23 49.9 51.19 49.9h37.12c26.66 0 49.1-20.3 51.07-46.2l3.12-41.24c-14-5.29-28.31-8.38-42.78-10.42zm404-50l-95.83 47.91.3 4c2 25.9 24.38 46.2 51.07 46.2h37.12C489 416 512 393.63 512 366.13v-37.55a227.76 227.76 0 0 0-43.85-10.66z"
+                  class="fa-primary"
+                ></path>
+              </g>
+            </svg>
+            <span class="link-text">Change theme</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+</div>
+    <main>
+     <div class="page theme" id="home2">
+        <div class="headerdiv" class="contenttext" ><h1>Erkki Suvila</h1></div>
+     </br>
+        <div id="profilepicdiv"></div><div id="introductiondiv">
+        </br>
+            I am 32 years old IT-enthusiast, currently working on my masters degree studies in Computer science at Turku University.</br> I’m interested in problem solving and helping people with their IT-based problems.
+               </div> 
         
- <script src="mail.js"></script>
-    <script src="app.js"></script>
-    <script src="window.js"></script>
 
+     </div>
 
+     <div class="page theme" id="reference2" >
+        <div  class="headerdiv" style="text-align: center;"><h1 id="rhead" class="contenttext">References</h1></div>
+        <div id="referencediv" >
+            <div id="experiencediv" style="width:30%; height:50%; float:left;">
+            <h2>WORK EXPERIENCE</h2>
+            <h4>Evondos</h4> Assembling medicine robots, summer job    06/2019-08/2019
+           <h4> Turun Tietokeskus Oy</h4>	ICT-technician			02/2018-06/2018
+           <h4>SCF Huolto Oy </h4> 		ICT-technician			02/2014–07/2017
+           <h4>Linjakaivuu Pöytyä Oy </h4> Construction worker summer job		08/2012–09/2012
+           <h4>Pöytyä municipality</h4> 	IT-support		10/2011–02/2012
+           <h4>Aurajoki Oy </h4> 	Metal worker		01/2008 – 09/2008
+           <h4> Nokia Oy</h4>		Assembly worker		06/2006 – 12/2006
+           <h4>Pöytyä municipality</h4> IT-support 02/2006 – 05/2006
+           </br>
+        </br>
+    </br>
+</br></br>
+        </div>
+            <div style="width:50%;height:50%;float:right">
+            <h2>EDUCATION</h2>
+            <h4>Master of Computer Science</h4>	Turku University (Currently studying) 2018-
+           <h4>Bachelor of information technology</h4>	Turku university of applied science 2013
+            <h4>Datanomi</h4>			Loimaan vocational school	2006
+        
+    </br>
+    <h2>MILITARY SERVICE</h2>
+    <h4>3rd Jaeger company, Pori Brigade, Säkylä	</h4>			01/2007 – 07/2007
+    </div>
+</div>
+
+</div>
+    <div class="page theme" id="hobbies2">
+        <div class="headerdiv" class="contenttext" ><h1 class="contenttext">Hobbies</h1></div>
+
+        <div id="hobbypicdiv"></div>
+    </br>
+        <div id="hobbydiv" class="contenttext">My main hobbies are brazilian jiu jitsu and submission wrestling. 
+            I started combat sports in 2014. My only regret regarding to combat sports is, that I wish I would have started earlier.
+            Many may think that combat sports are brutal and unnecessary, but it has brought many good things in to my life. 
+            For example I've gained confidence, made a lot of new friends and learnt to respect other people more than before. So combat has 
+            developed me both mentally and physically. I would recommend it to all people. Also it works as great counter effect to mental work which
+            is the main part of developing software or studying computer science. That's the reason this section has the power cable as it's icon, hobbies 
+            and exercising helps me to recharge myself so I can conquer new challenges!
+        </div>
+
+    </div>
+
+    <div class="page theme" id="gallery2">
+        <div  class="headerdiv" class="contenttext"><h1 class="contenttext">Pictures</h1></div>
+
+        <div id="gallerydiv">
+        <div class="photo">
+            <a target="_blank" href="profiili.jpg">
+              <img src="profiili.jpg"  width="600" height="400">
+            </a>
+            <div class="contenttext" id="description">My face</div>
+          </div>
+          
+          <div class="photo">
+            <a target="_blank" href=".jujutsuSM.png">
+              <img src="jujutsuSM.png" width="600" height="400">
+            </a>
+            <div class="contenttext" id="description">Jiu jitsu national champion team in 2018</div>
+          </div>
+          
+          <div class="photo">
+            <a target="_blank" href="opetus.png">
+              <img src="opetus.png"  width="600" height="400">
+            </a>
+            <div class="contenttext" id="description">Turku Teacher Training School</div>
+          </div>
+          
+          <div class="photo">
+            <a target="_blank" href="paini.png">
+              <img src="paini.png" width="600" height="400">
+            </a>
+            <div class="contenttext" id="description">My beloved hobby</div>
+          </div>
+        </div>
+    </div>
+
+    <div class="page theme" id="contact2">
+        <div class="headerdiv" class="contenttext" ><h1 class="contenttext">Contact me</h1></div>
+    
+      </br>
+          <div id="contactdiv" class="contenttext">
+            <form method="POST" onsubmit="return validateContactForm()" action="https://formspree.io/mlelngda" >
+              <div class="input-row">
+                <label style="padding-top: 20px;" class="contenttext">Name</label> <span
+                    id="userName-info" class="info"></span><br /> <input
+                    type="text" class="input-field" name="userName"
+                    id="userName" />
+            </div>
+            <div class="input-row" >
+                <label class="contenttext">Email</label> <span id="userEmail-info"
+                    class="info"></span><br /> <input type="text"
+                    class="input-field" name="userEmail" id="userEmail" />
+            </div>
+            <!--<div class="input-row">
+                <label>Aihe</label> <span id="subject-info"
+                    class="info"></span><br /> <input type="text"
+                    class="input-field" name="subject" id="subject" />
+            </div>-->
+            <div class="input-row">
+                <label class="contenttext">Message</label> <span id="userMessage-info"
+                    class="info"></span><br />
+                <textarea name="content" id="content"
+                    class="input-field" cols="40" rows="10"></textarea>
+            </div>
+            <div>
+                <input type="submit" name="send" class="btn-submit"
+                    value="Send" />
+    
+            </div>
+    </form>
+    
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"
+        type="text/javascript"></script>
+    <script type="text/javascript" src="mail.js"></script>
+    </div>
+    </div>
+
+</div>
+</div>
+        
+<script src="mail.js"></script>
+<script src="app.js"></script>
+<script src="window.js"></script>
     </main>
   </body>

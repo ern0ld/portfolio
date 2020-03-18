@@ -1,4 +1,16 @@
-window.addEventListener("load", showTheme)
+/*window.addEventListener("load", function() {
+    if(localStorage.getItem("themeChanged") === null){
+        console.log("palautetaan")
+        return
+    }
+else{
+
+
+    showTheme()
+}
+}
+    
+    )
 
 function showTheme(){
     if(localStorage.getItem("Current") === null){
@@ -34,4 +46,4 @@ function showTheme(){
           document.body.style.backgroundColor = "#ffffff"
       }
    }
-}
+}*/

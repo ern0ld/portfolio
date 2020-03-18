@@ -11,6 +11,7 @@ const app = {
         //Add listener to every div which belongs to page-class
         app.pages = document.querySelectorAll('.page');
         app.pages.forEach((pg)=>{
+            console.log(pg)
             pg.addEventListener('show', app.pageShown);
             
            })
@@ -33,59 +34,48 @@ const app = {
         ev.preventDefault();
         
         currentPage = ev.target.getAttribute('data-target')
+  
         console.log("klikattu elementtiä " + ev.target)
         console.log("currentpage " + currentPage);
         var hash = location.hash.replace('#' ,'');
         console.log("tässä hash " + hash);
         
-        
-        //poistetaan luokkalistasta edellinen aktiivinen sivu
-        //This is were the former visible div is removed from classlist
-        if( document.querySelector('.active').classList !== null){
-            document.querySelector('.active').classList.remove('active');
-            console.log(localStorage)
-       // toRemove.classList.remove('active');
-        if(localStorage.getItem(hash.toString()) !== undefined){
-            localStorage.removeItem(hash.toString())
-        } 
+        if(currentPage === "lang" || currentPage === null){
+           currentPage = tmpList[0];
         }
         else{
-            console.log("tyhjää")
+            tmpList.pop();
+            tmpList.push(currentPage);
         }
+        console.log("currentpage " + currentPage);
+        //poistetaan luokkalistasta edellinen aktiivinen sivu
+        //This is were the former visible div is removed from classlist
+       
+            document.querySelectorAll('.active').forEach((e) =>e.classList.remove('active'));
         
-        page = currentPage === null ? hash : currentPage;
-        //lisätään luokkalistaan tämän hetkinen sivu aktiiviseksi
-        //And here the new div is added to classList with active keyword
-       if(page === "null"){
-        page = tmpList[0]
-        document.getElementById(page).classList.add('active');
+    
+          
+           document.getElementById(currentPage).classList.add('active');
 
-       }
-       else{
-           
-           document.getElementById(page).classList.add('active');
-
-       }
      
         //Lisätään historiaan uusi sivu
         //Add new page/div to history
-        history.pushState({}, page, `#${page}`);
-        document.getElementById(page).dispatchEvent(app.show);
+        history.pushState({}, currentPage, `#${currentPage}`);
+        document.getElementById(currentPage).dispatchEvent(app.show);
        
         
-        localStorage.setItem("Current", page)
+        //localStorage.setItem("Current", currentPage)
        
        }
      
     ,
     pageShown: function(ev){
      
-
         console.log(ev.target);
 
         console.log('Page', ev.target.id, 'just shown');
         currentPage = ev.target.id ;
-        console.log(currentPage);
+
        //Näytetään osion otsikko suurella fontilla hetkellisesti
        //Show the header with big font momentarily
         var h1 = ev.target.querySelector('h1');
@@ -123,18 +113,42 @@ document.addEventListener('DOMContentLoaded', animate);
 
 
 //language change, changes the window location for now
-function changeLanguage(){
-    
-    if(document.getElementById("languagespan").innerHTML === "EN"){
-     
-            window.location.href = "en/index.html"
-         
-    }
-    else{
-        window.location.href = "../index.html"
-    }  
-}
+function changeLanguageEN(){
+    let toSet = activeEn();
+    document.querySelector(".active").classList.remove('active')
 
+        document.getElementById(toSet).classList.add("active")
+      
+    
+
+           document.getElementById("fidiv").classList.remove('primary')
+           document.getElementById("endiv").classList.remove('secondary')
+           document.getElementById("endiv").classList.add('primary')
+           document.getElementById("fidiv").classList.add('secondary')
+         // document.getElementById("home2").classList.add("active")
+        //  console.log("aktiivinenEN " + active.id)
+           //history.replaceState({}, 'Home',  '#'+active.id+"2");
+          
+
+           
+   
+}
+function changeLanguageFI(){
+
+
+    let toSet = activeFi();
+    document.querySelector(".active").classList.remove('active')
+
+        document.getElementById(toSet).classList.add("active")
+    document.getElementById("endiv").classList.remove('primary')
+    document.getElementById("fidiv").classList.remove('secondary')
+    document.getElementById("fidiv").classList.add('primary')
+    document.getElementById("endiv").classList.add('secondary')
+   // document.getElementById("home").classList.add("active")
+
+    //console.log("aktiivinenFi " + active.id)
+    //history.replaceState({}, 'Home', '#'+document.querySelector('.active').id.slice(0,-1));
+}
 function animate(){
 
 
@@ -144,4 +158,28 @@ function animate(){
         h.classList.remove('big');
     }, 1200, h1);
 }
+function activeFi(){
+   return document.querySelector(".active").id === "home" ? "home" :
+    document.querySelector(".active").id === "home2" ? "home" :
+    document.querySelector(".active").id === "hobbies" ? "hobbies" :
+    document.querySelector(".active").id === "hobbies2" ? "hobbies" :
+    document.querySelector(".active").id === "reference2" ? "reference" :
+    document.querySelector(".active").id === "reference" ? "reference" :  
+    document.querySelector(".active").id === "gallery" ? "gallery" :
+    document.querySelector(".active").id === "gallery2" ? "gallery" :
+    document.querySelector(".active").id === "contact2" ? "contact" :
+    document.querySelector(".active").id === "contact" ? "contact" : "home"
+}
 
+function activeEn(){
+    return document.querySelector(".active").id === "home" ? "home2" :
+    document.querySelector(".active").id === "home2" ? "home2" :
+    document.querySelector(".active").id === "hobbies" ? "hobbies2" :
+    document.querySelector(".active").id === "hobbies2" ? "hobbies2" :
+    document.querySelector(".active").id === "reference2" ? "reference2" :
+    document.querySelector(".active").id === "reference" ? "reference2" :  
+    document.querySelector(".active").id === "gallery" ? "gallery2" :
+    document.querySelector(".active").id === "gallery2" ? "gallery2" :
+    document.querySelector(".active").id === "contact2" ? "contact2" :
+    document.querySelector(".active").id === "contact" ? "contact2" : "home2"
+}
