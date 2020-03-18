@@ -9,7 +9,7 @@ function showTheme(){
     ///document.getElementById(currentPage).classList.add('active');
  
     if(currentPage !== "home"){
-    history.replaceState({}, 'Home', '#'+currentPage);
+    history.replaceState({}, 'Home', '#home');
     }
     if(localStorage.getItem("themeChanged") === null){
         return

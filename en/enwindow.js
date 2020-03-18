@@ -7,7 +7,7 @@ function showThemeEn(){
    /// history.replaceState({}, 'Home', '#'+currentPage);
    
     if(localStorage.getItem("themeChanged") === null){
-        return
+        history.replaceState({}, 'Home', '#home');
     }
   else{
     const current = localStorage.getItem('theme');
