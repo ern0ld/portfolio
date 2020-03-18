@@ -25,8 +25,9 @@ const themeMap = {
   //Toggle between themes
   function toggleTheme() {
     if(document.querySelector(".primary").id.includes("en") && !document.querySelector(".active").id.includes("2")){
-
       document.getElementById(activeEn()).classList.add("active")
+      document.getElementById(activeFi()).classList.remove("active")
+      
     }
     if(document.querySelector(".primary").id.includes("fi") && document.querySelector(".active").id.includes("2")){
  
@@ -43,9 +44,8 @@ const themeMap = {
     
     bodyClass.replace(current, next);
     localStorage.setItem('theme', next)
-    console.log(next)
     //if theme dark is next, change the color of elements belonging in contenttext-class
-    setTheme(next);
+
     if(next === "default"){
       document.body.style.backgroundColor= whitesmoke;
     }
@@ -71,5 +71,3 @@ if( next === "light")
  test.addEventListener("click", toggleTheme)
  var test = document.getElementById('themeButton2')
  test.addEventListener("click", toggleTheme)
-
- 
