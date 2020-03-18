@@ -25,10 +25,13 @@ const themeMap = {
   //Toggle between themes
   function toggleTheme() {
     if(document.querySelector(".primary").id.includes("en") && !document.querySelector(".active").id.includes("2")){
-     // document.querySelector(".active").classList.remove('active')
 
       document.getElementById(activeEn()).classList.add("active")
     }
+    if(document.querySelector(".primary").id.includes("fi") && document.querySelector(".active").id.includes("2")){
+ 
+       document.getElementById(activeFi()).classList.add("active")
+     }
  localStorage.setItem("themeChanged", true)
  const current = localStorage.getItem('theme');
  const next = themeMap[current];
