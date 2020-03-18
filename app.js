@@ -42,11 +42,11 @@ const app = {
         //poistetaan luokkalistasta edellinen aktiivinen sivu
         //This is were the former visible div is removed from classlist
         if( document.querySelector('.active').classList !== null){
-            var toRemove = document.querySelector('.active')
-            console.log(toRemove)
-        toRemove.classList.remove('active');
-        if(localStorage.getItem(toRemove) !== null){
-            localStorage.removeItem(toRemove)
+            document.querySelector('.active').classList.remove('active');
+            console.log(localStorage)
+       // toRemove.classList.remove('active');
+        if(localStorage.getItem(hash.toString()) !== undefined){
+            localStorage.removeItem(hash.toString())
         } 
         }
         else{
@@ -119,6 +119,7 @@ const app = {
 
 document.addEventListener('DOMContentLoaded', app.init);
 document.addEventListener('DOMContentLoaded', animate);
+
 
 
 //language change, changes the window location for now

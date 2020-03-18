@@ -1,11 +1,10 @@
 window.addEventListener("load", showThemeEn)
 
 function showThemeEn(){
-    currentPage = localStorage.getItem("Current")
-    document.querySelector('.active').classList.remove('active');
-    document.getElementById(currentPage).classList.add('active');
-    var hash = location.hash.replace('#' ,'vittu');
-    history.replaceState({}, 'Home', '#'+currentPage);
+   // currentPage = localStorage.getItem("Current")
+   // document.querySelector('.active').classList.remove('active');
+   // document.getElementById(currentPage).classList.add('active');
+   /// history.replaceState({}, 'Home', '#'+currentPage);
    
     if(localStorage.getItem("themeChanged") === null){
         return

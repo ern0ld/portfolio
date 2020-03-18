@@ -4,9 +4,9 @@ function showTheme(){
     if(localStorage.getItem("Current") === null){
         return
     }
-    currentPage = localStorage.getItem("Current")
-    document.querySelector('.active').classList.remove('active');
-    document.getElementById(currentPage).classList.add('active');
+    //currentPage = localStorage.getItem("Current")
+    //document.querySelector('.active').classList.remove('active');
+    ///document.getElementById(currentPage).classList.add('active');
  
     if(currentPage !== "home"){
     history.replaceState({}, 'Home', '#'+currentPage);
